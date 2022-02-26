@@ -14,9 +14,9 @@ const patientSchema = new Schema({
         required: true,
     },
     gender: {
-        type: Number,
+        type: String,
         required: true,
-        enum: ["male", "female"]
+        enum: ["Male", "Female"]
     },
     race: {
         type: String,

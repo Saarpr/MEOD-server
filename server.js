@@ -3,12 +3,14 @@ const app = express();
 const port = process.env.PORT;
 const { authRouter } = require("./routers/auth-router");
 const { medicalRecordRouter } = require("./routers/medical-record-router");
+const { patientRouter } = require("./routers/patient-router");
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
 app.use('/auth', authRouter);
 app.use('/record', medicalRecordRouter);
+app.use('/patient', patientRouter);
 
 app.use((err, req, res, next) => {
     console.error(err.stack);
