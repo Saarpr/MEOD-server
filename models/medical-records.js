@@ -1,10 +1,6 @@
 const { Schema, model } = require('mongoose');
 
 const recordSchema = new Schema({
-    id: {
-        type: Number,
-        unique: true,
-    },
     patient_id: {
         type: Number,
         required: true,
@@ -32,7 +28,7 @@ const recordSchema = new Schema({
         type: String,
     },
     date_of_discharge: {
-        type: Date,
+        type: String,
     },
     associated_causes: {
         type: String,
@@ -44,7 +40,7 @@ const recordSchema = new Schema({
         type: Boolean,
     },
     number_of_transplants: {
-        type: String,
+        type: Number,
     },
 }, { collection: 'medical-records' });
 
