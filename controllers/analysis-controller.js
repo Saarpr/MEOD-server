@@ -33,16 +33,18 @@ const getFullMedicalRecord = (patient, medical_record) => {
 exports.analysisController = {
     getAnalysis(req, res) {
         const predictPath = "http://localhost:8000/predict"
-        MedicalRecord.findOne({id: req.body.medical_record_id}).then(medical_record => {
-            console.log("found medical record");
+        console.log("search medical record id: ", req.body.medical_record_id);
+        MedicalRecord.findOne({id: parseInt(req.body.medical_record_id)}).then(medical_record => {
+            console.log("found medical record for patient", medical_record.patient_id);
             Patient.findOne({id: medical_record.patient_id}).then(patient => {
-                console.log("found patient");
+                console.log("found patient", patient.id);
                 const full_medical_record = getFullMedicalRecord(patient, medical_record)
                 axios
                     .post(predictPath, full_medical_record)
                     .then(response => {
                         console.log("predict response");
                         const cluster = response.data.cluster
+                        console.log("cluster: " + cluster);
                         Analytics.find().then(result => {
                             console.log("found analytics");
                             res.status(200).send({
