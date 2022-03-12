@@ -3,7 +3,7 @@ const { Schema, model } = require('mongoose');
 const recordSchema = new Schema({
     id: {
         type: Number,
-        unique: true,
+        // unique: true,
     },
     patient_id: {
         type: Number,
@@ -40,10 +40,10 @@ const recordSchema = new Schema({
     secondary_diagnosis: {
         type: String,
     },
-    indicator_of_transplants: {
+    indicator_of_transplantation: {
         type: Boolean,
     },
-    number_of_transplants: {
+    number_of_transplantation: {
         type: Number,
     },
 }, { collection: 'medical-records' });

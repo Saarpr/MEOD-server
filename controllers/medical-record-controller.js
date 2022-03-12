@@ -22,6 +22,7 @@ exports.medicalRecordController = {
     },
     setMedicalRecord(req, res) {
         const medicalRecord = req.body;
+        console.log(medicalRecord)
         const newMedicalRecord = new Record(medicalRecord);
         const result = newMedicalRecord.save();
         if(result)
