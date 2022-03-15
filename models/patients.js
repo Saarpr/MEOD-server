@@ -20,13 +20,15 @@ const patientSchema = new Schema({
     },
     race: {
         type: String,
-        required: true,
     },
     nationality: {
         type: String,
         required: true,
     },
     ethnic_group: {
+        type: String,
+    },
+    healthcare_unit: {
         type: String,
     },
 }, { collection: 'patients' });

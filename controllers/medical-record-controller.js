@@ -20,14 +20,16 @@ exports.medicalRecordController = {
             }
         })
     },
-    setMedicalRecord(req, res) {
+    async setMedicalRecord(req, res) {
         const medicalRecord = req.body;
-        console.log(medicalRecord)
-        const newMedicalRecord = new Record(medicalRecord);
-        const result = newMedicalRecord.save();
+        const newMedicalRecord = await new Record(medicalRecord);
+        const result = await newMedicalRecord.save();
+        console.log(newMedicalRecord.id)
+
         if(result)
-            res.status(200).json({user: medicalRecord , message : "user added!"});
-        else 
+            res.send({"id":newMedicalRecord.id});
+            // res.send(newMedicalRecord.id);
+        else
             res.status(500).json({ error: "DB" });
     }
 }

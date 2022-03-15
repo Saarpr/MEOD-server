@@ -1,29 +1,25 @@
 const { Schema, model } = require('mongoose');
 
 const recordSchema = new Schema({
-    id: {
-        type: Number,
-        // unique: true,
-    },
+    // id: {
+    //     type: Number,
+    //     // unique: true,
+    // },
     patient_id: {
         type: Number,
-        required: true,
+        required: true
     },
     weight: {
         type: Number,
-        required: true,
     },
     height: {
         type: Number,
-        required: true,
     },
     main_diagnosis: {
         type: String,
-        required: true,
     },
     performed_procedure: {
         type: String,
-        required: true,
     },
     reason_for_encounter: {
         type: String,
