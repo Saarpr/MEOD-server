@@ -28,7 +28,7 @@ const recordSchema = new Schema({
         type: String,
     },
     date_of_discharge: {
-        type: String,
+        type: Number,
     },
     associated_causes: {
         type: String,
@@ -37,7 +37,7 @@ const recordSchema = new Schema({
         type: String,
     },
     indicator_of_transplantation: {
-        type: Boolean,
+        type: String,
     },
     number_of_transplantation: {
         type: Number,
