@@ -25205,7 +25205,16 @@ const procedures = [{
     "co_procedimento": "0506020118",
     "co_sub_grupo": "06",
     "no_procedimento": "Tratamento De Intercorrencia Pós Transplante Autológo De Células-Tronco Hematopoéticas- Pós Transplante Crítico"
-}, {
+},
+    {
+        "co_forma_organizacao": "01",
+        "co_grupo": "06",
+        "co_proc_formatado": "06.01.12.002-7",
+        "co_procedimento": "0601120027",
+        "co_sub_grupo": "01",
+        "no_procedimento": "Lamivudina 150 mg (por comprimido)"
+    },
+    {
     "co_forma_organizacao": "01",
     "co_grupo": "06",
     "co_proc_formatado": "06.02.01.001-2",
