@@ -25430,7 +25430,7 @@ const procedures = [{
     "co_proc_formatado": "06.03.04.001-2",
     "co_procedimento": "0603040012",
     "co_sub_grupo": "03",
-    "no_procedimento": "Cabergolina 0,5 Mg (Por Comprimido)"
+    "no_procedimento": "Cabergolina 0,7 Mg (Por Comprimido)"
 }, {
     "co_forma_organizacao": "05",
     "co_grupo": "06",
@@ -26115,6 +26115,13 @@ const procedures = [{
     "co_grupo": "06",
     "co_proc_formatado": "06.04.13.006-6",
     "co_procedimento": "0604130066",
+    "co_sub_grupo": "04",
+    "no_procedimento": "Rivastigmina 1,5 Mg (Por Capsula)"
+},{
+    "co_forma_organizacao": "13",
+    "co_grupo": "06",
+    "co_proc_formatado": "06.04.13.006-6",
+    "co_procedimento": "0601220030",
     "co_sub_grupo": "04",
     "no_procedimento": "Rivastigmina 1,5 Mg (Por Capsula)"
 }, {
