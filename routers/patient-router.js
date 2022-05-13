@@ -1,9 +1,13 @@
 const patientRouter = require('express').Router();
 const { patientController } = require('../controllers/patient-controller');
+const {medicalRecordController} = require("../controllers/medical-record-controller");
 
-patientRouter.get('/get-patient/:id' , patientController.getPatient);
-patientRouter.get('/get-all-patients' , patientController.getAllPatients);
-patientRouter.post('/add-patient' , patientController.addPatient);
-patientRouter.put('/update-patient' , patientController.updatePatient);
+patientRouter.get('/:id' , patientController.getPatient);
+patientRouter.get('/' , patientController.getAllPatients);
+patientRouter.post('/' , patientController.addPatient);
+patientRouter.get('/:patientId/records/' , medicalRecordController.getUserRecords);
+patientRouter.get('/:patientId/records/:recordId/' , medicalRecordController.getUserRecord);
+patientRouter.put('/:id' , patientController.updatePatient);
+
 
 module.exports = {patientRouter};

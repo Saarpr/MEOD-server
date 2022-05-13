@@ -20,6 +20,17 @@ exports.medicalRecordController = {
             }
         })
     },
+    getUserRecord(req,res) {
+        const userId = req.params.patientId;
+        const recordId = req.params.recordId;
+        Record.findOne({patient_id : userId, id: recordId}).then(record => {
+            if(record)
+                res.send(record);
+            else
+                res.status(400).json({ error: "No record found!" })
+        })
+
+    },
     async setMedicalRecord(req, res) {
         const medicalRecord = req.body;
         const newMedicalRecord = await new Record(medicalRecord);

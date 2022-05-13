@@ -1,8 +1,7 @@
 const medicalRecordRouter = require('express').Router();
 const {medicalRecordController} = require('../controllers/medical-record-controller');
 
-medicalRecordRouter.get('/get-record/:recordId' , medicalRecordController.getMedicalRecord);
-medicalRecordRouter.get('/get-user-records/:patientId' , medicalRecordController.getUserRecords);
-medicalRecordRouter.post('/set-record' , medicalRecordController.setMedicalRecord);
+medicalRecordRouter.get('/:recordId' , medicalRecordController.getMedicalRecord);
+medicalRecordRouter.post('/' , medicalRecordController.setMedicalRecord);
 
 module.exports = {medicalRecordRouter};
