@@ -2,7 +2,7 @@ const { Schema, model } = require('mongoose');
 
 const metadataSchema = new Schema({
     model_version: {
-        type: Number,
+        type: Object,
         required: true,
     },
     model_versions: {
