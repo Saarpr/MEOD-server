@@ -3,6 +3,7 @@ const Analytics = require("../models/analytics");
 const MedicalRecord = require("../models/medical-records");
 const Patient = require("../models/patients");
 const  moment = require('moment');
+const Metadata = require("../models/metadata");
 const getFullMedicalRecord = (patient, medical_record) => {
     const now = moment();
     const formattedNow = now.format("YYYYMM");
@@ -46,13 +47,16 @@ exports.analysisController = {
                         console.log("predict response");
                         const cluster = response.data.cluster
                         console.log("cluster: " + cluster);
-                        Analytics.find().then(result => {
-                            console.log("found analytics");
-                            res.status(200).send({
-                                statistics: result[0].clusters[cluster],
-                                performed_procedure: full_medical_record.performed_procedure
-                            });
+                        Metadata.findOne().then(metadata => {
+                            Analytics.findOne({"date": metadata.model_version.date, "k": metadata.model_version.k}).then(result => {
+                                console.log("found analytics");
+                                res.status(200).send({
+                                    statistics: result.clusters[cluster],
+                                    performed_procedure: full_medical_record.performed_procedure
+                                });
+                            })
                         })
+
                     })
                     .catch(error => {
                         res.status(500).send({message: error.message})

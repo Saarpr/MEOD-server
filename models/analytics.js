@@ -5,6 +5,14 @@ const analyticsSchema = new Schema({
         type: [Object],
         required: true,
     },
+    k: {
+        type: Number,
+        required: true,
+    },
+    date: {
+        type: Number,
+        required: true,
+    },
 
 }, { collection: 'analytics' });
 

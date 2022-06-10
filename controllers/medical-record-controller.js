@@ -38,7 +38,7 @@ exports.medicalRecordController = {
         console.log(newMedicalRecord.id)
 
         if(result)
-            res.send({"id":newMedicalRecord.id});
+            res.send({"id": newMedicalRecord.id});
             // res.send(newMedicalRecord.id);
         else
             res.status(500).json({ error: "DB" });

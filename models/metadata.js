@@ -1,8 +1,12 @@
 const { Schema, model } = require('mongoose');
 
 const metadataSchema = new Schema({
-    distance_matrix_version: {
+    model_version: {
         type: Number,
+        required: true,
+    },
+    model_versions: {
+        type: Array,
         required: true,
     },
 
