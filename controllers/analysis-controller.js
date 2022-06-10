@@ -48,6 +48,7 @@ exports.analysisController = {
                         const cluster = response.data.cluster
                         console.log("cluster: " + cluster);
                         Metadata.findOne().then(metadata => {
+                            console.log(metadata)
                             Analytics.findOne({"date": metadata.model_version.date, "k": metadata.model_version.k}).then(result => {
                                 console.log("found analytics");
                                 res.status(200).send({
