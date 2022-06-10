@@ -2,7 +2,7 @@ const { Schema, model } = require('mongoose');
 
 const patientSchema = new Schema({
     id: {
-        type: Number,
+        type: String,
         unique: true,
     },
     date_of_birth: {
