@@ -38,9 +38,11 @@ exports.analysisController = {
         console.log("search medical record id: ", req.body.medical_record_id);
         MedicalRecord.findOne({_id: req.body.medical_record_id}).then(medical_record => {
             console.log("found medical record for patient", medical_record.patient_id);
+            console.log(medical_record);
             Patient.findOne({id: medical_record.patient_id}).then(patient => {
                 console.log("found patient", patient.id);
                 const full_medical_record = getFullMedicalRecord(patient, medical_record)
+                console.log("full medical record ", full_medical_record);
                 axios
                     .post(predictPath, full_medical_record)
                     .then(response => {

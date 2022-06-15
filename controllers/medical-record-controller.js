@@ -3,7 +3,7 @@ const Record = require ("../models/medical-records.js")
 exports.medicalRecordController = {
     getMedicalRecord(req, res) {
         const recordId = req.params.recordId;
-        Record.findOne({id: recordId}).then(record => {
+        Record.findOne({_id: recordId}).then(record => {
             if(record)
                 res.send(record);
             else 
@@ -23,9 +23,12 @@ exports.medicalRecordController = {
     getUserRecord(req,res) {
         const userId = req.params.patientId;
         const recordId = req.params.recordId;
-        Record.findOne({patient_id : userId, id: recordId}).then(record => {
-            if(record)
+        console.log(`getting record: userId: ${userId}; recordId: ${recordId}`)
+        Record.findOne({patient_id : userId, _id: recordId}).then(record => {
+            if(record) {
+                console.log(record)
                 res.send(record);
+            }
             else
                 res.status(400).json({ error: "No record found!" })
         })
