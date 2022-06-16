@@ -53,6 +53,7 @@ exports.analysisController = {
                             console.log(metadata)
                             Analytics.findOne({"date": metadata.model_version.date, "k": metadata.model_version.k, "distance_function_type": metadata.model_version.distance_function_type}).then(result => {
                                 console.log("found analytics");
+                                console.log(result)
                                 res.status(200).send({
                                     statistics: result.clusters[cluster],
                                     performed_procedure: full_medical_record.performed_procedure
