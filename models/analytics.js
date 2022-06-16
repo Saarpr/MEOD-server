@@ -13,6 +13,10 @@ const analyticsSchema = new Schema({
         type: Number,
         required: true,
     },
+    distance_function_type: {
+        type: Number,
+        required: true,
+    },
 
 }, { collection: 'analytics' });
 
