@@ -29368,6 +29368,14 @@ const procedures =[
         "no_procedimento": "Tacrolimus 1 Mg For Transplant (Per Capsule)"
     },
     {
+        "co_forma_organizacao": "20",
+        "co_grupo": "06",
+        "co_proc_formatado": "06.01.20.016-0",
+        "co_procedimento": "0601200160",
+        "co_sub_grupo": "01",
+        "no_procedimento": "Tacrolimus 1 Mg (Per Capsule)"
+    },
+    {
         "co_forma_organizacao": "08",
         "co_grupo": "06",
         "co_proc_formatado": "06.03.08.021-9",
