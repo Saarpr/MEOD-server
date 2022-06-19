@@ -29376,6 +29376,14 @@ const procedures =[
         "no_procedimento": "Tacrolimus 1 Mg (Per Capsule)"
     },
     {
+        "co_forma_organizacao": "20",
+        "co_grupo": "06",
+        "co_proc_formatado": "06.01.20.009-8",
+        "co_procedimento": "0601200098",
+        "co_sub_grupo": "01",
+        "no_procedimento": "Methorexate 25 Mg (Per Capsule)"
+    },
+    {
         "co_forma_organizacao": "08",
         "co_grupo": "06",
         "co_proc_formatado": "06.03.08.021-9",
